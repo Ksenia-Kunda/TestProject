@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" >
+    <parameter name="URL"  value="https://www.tut.by"/>
+    <test name="TestTestNG" >
+        <classes>
+            <class name="TestTestNG" />
+        </classes>
+    </test>
+</suite>
