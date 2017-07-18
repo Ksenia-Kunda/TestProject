@@ -1,19 +1,17 @@
-import dataProvider.DataProviderClass;
+import org.testng.annotations.Listeners;
+import utils.DataProviderClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import utils.MyListener;
 
 /**
  * Created by Kseniya_Kunda on 7/17/2017.
  */
+@Listeners({ MyListener.class})
 public class TestTestNG {
-
-
-
 
     @Test
     public void test1 () {
@@ -42,7 +40,8 @@ public class TestTestNG {
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get(url);
+        Assert.assertEquals("Белорусский портал TUT.BY", webDriver.getTitle());
 
+        webDriver.close();
     }
-
 }
